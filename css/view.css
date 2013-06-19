@@ -1,0 +1,60 @@
+.header {
+    text-align: center;
+    font-size: 28px;
+}
+
+.container {
+    text-align: center;
+    display: block;
+}
+
+.main {
+    text-align: center;
+}
+#first-column, #second-column {
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    margin: 5px;
+}
+
+#pictures {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.picture {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+#info {
+    display: none;
+    text-align: left;
+    margin: auto;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#info-icon {
+    display: none;
+    float: left; 
+    margin-right: 5px;
+}
+
+#answer {
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+}
+
+#letters {
+    margin: 5px;
+    padding: 5px;
+    height: 40px;
+}
