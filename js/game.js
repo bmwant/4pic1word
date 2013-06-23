@@ -1,12 +1,30 @@
 $(document).ready(function() {
-    startLevel(0);
+    var lev = 0;
+    $('#next-link').hide();
+    $('#next-link').click(function() {
+        startLevel(lev++);
+        $(this).hide();
+        $('#info').hide();
+    });
+    startLevel(lev++);
 });
 
 function startLevel(level) {
-    var wordsArray = [ 'CAR', 'secondary', 'elementary', 'another', 'car' ];
+    var wordsArray = [ 'CAR', 'FLOWERS', 'RIVER' ];
     var word = wordsArray[level];
+    clearAll();
+    
     loadImages(level);
     loadAvailableLetters(word);
+}
+
+function clearAll() {
+    $("#answer").empty();
+    $("#letters").empty();
+    $("#picture-1").empty();
+    $("#picture-2").empty();
+    $("#picture-3").empty();
+    $("#picture-4").empty();
 }
 
 function loadAvailableLetters(word) {
@@ -62,6 +80,7 @@ function loadAvailableLetters(word) {
                     console.log(ans)
                     if(answer.join("") == word) {
                         showInfo("You win!");
+                        $('#next-link').show();
                     }
                     break;
                 }
@@ -74,10 +93,11 @@ function loadAvailableLetters(word) {
 function loadImages(level) {
     var images = [];
     for(var i = 1; i <= 4; i++) {
-        images[i-1] = $('<img>', {  src: 'img/' + i + '.jpg', 
+        images[i-1] = $('<img>', {  src: 'img/' + level + '/' + i + '.jpg', 
                                     class: 'picture',
                                     mouseover: function() {$(this).css("opacity", "0.5");}, 
-                                    mouseleave: function() {$(this).css("opacity", "1");} 
+                                    mouseleave: function() {$(this).css("opacity", "1");},
+                                    id: 'i'
                                 });
         $('#picture-' + i).append(images[i-1]);
     }
