@@ -54,7 +54,12 @@
 }
 
 #letters {
+    height: 40px;
     margin: 5px;
     padding: 5px;
-    height: 40px;
+}
+
+.my-button {
+    height: 37px;
+    width: 48px;
 }
