@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function startLevel(level) {
-    var wordsArray = [ 'FIRST', 'secondary', 'elementary', 'another', 'car' ];
+    var wordsArray = [ 'CAR', 'secondary', 'elementary', 'another', 'car' ];
     var word = wordsArray[level];
     loadImages(level);
     loadAvailableLetters(word);
@@ -12,25 +12,27 @@ function startLevel(level) {
 function loadAvailableLetters(word) {
     var answer_buttons = [];
     var letter_buttons = [];
+    var answer = [];
+    
+    //create your answer letters
     for(var i = 0; i < word.length; i++) {
+        answer[i] = " ";
         answer_buttons.push($('<div id=a' + i + '> </div>'));
         answer_buttons[i].button();
-        //answer_buttons[i].addClass('my-button');
-        answer_buttons[i].hide();
+        answer_buttons[i].addClass('my-button');
+        //answer_buttons[i].hide();
         answer_buttons[i].click(function() {
             var nowLetter = $(this).text();
-            $(this).fadeToggle('fast');
             $(this).html(" ");
             for(var j = 0; j < letter_buttons.length; j++) {
                 if(letter_buttons[j].is(":visible") == false && letter_buttons[j].text() == nowLetter) {
-                    letter_buttons[j].fadeToggle('fast');
+                    letter_buttons[j].fadeIn('fast');
                 }
             }
         });
         $('#answer').append(answer_buttons[i]);
     }
     
-    var answer = "";
     //create word.length*2 avaible letters
     var letter_for_buttons = [];
     for(var i = 0; i < word.length; i++) {
@@ -50,12 +52,17 @@ function loadAvailableLetters(word) {
         letter_buttons[i].button();
         letter_buttons[i].click(function() {
             var letterNow = $(this).text();
-            answer += letterNow;
             for(var j = 0; j < answer_buttons.length; j++) {
                 if(answer_buttons[j].text() == " ") {
                     answer_buttons[j].html('<span class="ui-button-text">' + letterNow + '</span>');
-                    answer_buttons[j].fadeToggle('fast');
+                    answer_buttons[j].fadeIn('fast');
                     $(this).fadeToggle('fast');
+                    answer[j] = letterNow;
+                    var ans = answer.join("");
+                    console.log(ans)
+                    if(answer.join("") == word) {
+                        showInfo("You win!");
+                    }
                     break;
                 }
             }
@@ -96,3 +103,4 @@ function fisherYates(myArray) {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
