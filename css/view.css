@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Passion+One);
+
 html,
 body {
    margin: 0;
@@ -7,17 +9,22 @@ body {
 }
 
 .header {
+    padding: 20px;
+    font-size: 36px;
+    font-family: 'Passion One';
     text-align: center;
-    font-size: 28px;
 }
 
 .container {
     text-align: center;
     display: block;
+    min-height:100%;
+    position:relative;
 }
 
 .main {
     text-align: center;
+    padding-bottom: 37px;
 }
 
 .footer {
@@ -78,7 +85,7 @@ body {
     width: 16px;
     background-repeat: no-repeat;
     background-position: -16px -144px;
-    background-image: url("file://localhost/D:/coding/4pic1word/css/blue_icons.png");
+    background-image: url("blue_icons.png");
 }
 
 #answer {
