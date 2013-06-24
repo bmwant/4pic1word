@@ -36,8 +36,9 @@ function loadAvailableLetters(word) {
     for(var i = 0; i < word.length; i++) {
         answer[i] = " ";
         answer_buttons.push($('<div id=a' + i + '> </div>'));
-        answer_buttons[i].button();
+        //answer_buttons[i].button();
         answer_buttons[i].addClass('my-button');
+        answer_buttons[i].addClass('empty-button');
         //answer_buttons[i].hide();
         answer_buttons[i].click(function() {
             var nowLetter = $(this).text();
@@ -45,6 +46,9 @@ function loadAvailableLetters(word) {
             for(var j = 0; j < letter_buttons.length; j++) {
                 if(letter_buttons[j].is(":visible") == false && letter_buttons[j].text() == nowLetter) {
                     letter_buttons[j].fadeIn('fast');
+                    $(this).addClass('empty-button');
+                    $(this).removeClass('answer-button');
+                    break;
                 }
             }
         });
@@ -62,17 +66,20 @@ function loadAvailableLetters(word) {
     }
     //shuffle array
     fisherYates(letter_for_buttons);
-    //create buttons with this letters
     
+    //create buttons with this letters
     for(var i = 0; i < word.length*2; i++) {
         var x = letter_for_buttons[i];
         letter_buttons.push($('<div id=l' + i + x + '>' + x + '</div>'));
-        letter_buttons[i].button();
+        letter_buttons[i].addClass('my-button');
+        letter_buttons[i].addClass('letter-button');
         letter_buttons[i].click(function() {
             var letterNow = $(this).text();
             for(var j = 0; j < answer_buttons.length; j++) {
                 if(answer_buttons[j].text() == " ") {
-                    answer_buttons[j].html('<span class="ui-button-text">' + letterNow + '</span>');
+                    answer_buttons[j].text(letterNow);
+                    answer_buttons[j].removeClass('empty-button');
+                    answer_buttons[j].addClass('answer-button');
                     answer_buttons[j].fadeIn('fast');
                     $(this).fadeToggle('fast');
                     answer[j] = letterNow;
