@@ -2,23 +2,24 @@
 <html>
 <head>
     <title>4 pictures 1 word game</title>
-    <link href="css/view.css" rel="stylesheet">
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/game.js"></script>
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="javascripts/game.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        4pic1word game
-        <div id="next-link">
-            <a href="#">Next level</a>
+        <div id="level-menu">
+            Level: 1
+        </div>
+        <div id="info-menu" class="font-effect-fire">
+            Information here
+        </div>
+        <div id="next-menu">
+            Tap to go next
         </div>
     </div>
     <div class="main">
-        <div id="info">
-            <span id="info-icon"></span>
-            <span id="info-text"><!-- information here --></span>
-	</div>
         <div id="pictures">
             <div id="first-column">
                 <div id="picture-1"></div>
@@ -29,11 +30,10 @@
                 <div id="picture-4"></div>
             </div>
         </div>
-        <div id="answer">
-            <!-- answer here -->
-        </div>
+        <div id="answer"></div>
         <div id="letters">
-            <!-- available letter here -->
+            <div id="row-1"></div>
+            <div id="row-2"></div>
         </div>
     </div>
     <div class="footer">

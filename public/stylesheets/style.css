@@ -2,17 +2,42 @@
 
 html,
 body {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   font-family: Trebuchet MS;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Trebuchet MS;
 }
 
 .header {
-    padding: 20px;
+    min-height: 147px;
     font-size: 36px;
     font-family: 'Passion One';
+    color: #555555;
+}
+
+#level-menu {
+    height: 37px;
+    display: none;
+    text-align: left;
+    padding: 5px 5px 5px 10px;
+    background-color: #FED22F;
+}
+
+#info-menu {
+    height: 37px;
+    display: none;
     text-align: center;
+    padding: 5px;
+    background-color: #FEE58A;
+}
+
+#next-menu {
+    display: none;
+    height: 37px;
+    text-align: right;
+    padding: 5px 10px 5px 5px;
+    background-color: #88DCDF;
+
 }
 
 .container {
@@ -23,6 +48,8 @@ body {
 }
 
 .main {
+    vertical-align: middle;
+    margin: auto;
     text-align: center;
     padding-bottom: 37px;
 }
@@ -54,6 +81,7 @@ body {
     display: inline-block;
     text-align: center;
     width: 100%;
+    margin-top: 20px;
 }
 
 .picture {
@@ -64,22 +92,21 @@ body {
 }
 
 #info {
+    /*visibility: hidden;*/
     display: none;
+    height: 37px;
     text-align: left;
-    margin: auto;
-    width: 50%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /*margin: auto;*/
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
     padding: 5px;
     color: #363636;
     background-color: #FFF1A5;
-    border: 1px solid #FED22F;
-    border-radius: 4px;
 }
 
 #info-icon {
-    display: none;
-    float: left; 
+    visibility: hidden;
+    float: left;
     margin-right: 5px;
     height: 16px;
     width: 16px;
@@ -103,20 +130,15 @@ body {
 .my-button {
     height: 37px;
     width: 48px;
-    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    color:#777777;
-    font-family:Trebuchet MS;
-    font-size:15px;
-    font-weight:bold;
-    text-decoration:none;
-    text-shadow:1px 1px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    color: #777777;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #ffffff;
     padding: 2px;
     margin: 2px;
     vertical-align: middle;
@@ -124,7 +146,7 @@ body {
 }
 
 .letter-button:hover {
-    background-color:#FED22F;
+    background-color: #FED22F;
 }
 
 .letter-button {
@@ -132,7 +154,9 @@ body {
 }
 
 .answer-button {
-    background-color: #A0C3FF;
+    background-color: #88DCDF;
+    text-shadow: none;
+    box-shadow: none;
 }
 
 .empty-button {
